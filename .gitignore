@@ -1,0 +1,5 @@
+/.buildpath
+/.project
+/.settings
+/include/smarty/templates_c
+!/include/smarty/templates_c/.deleteme
