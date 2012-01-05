@@ -63,14 +63,20 @@ function getipbyhost($ip_host = "") {
 
 //connect to db
 try {
-	$mysql		= mysql_connect($config->db_host,$config->db_user,$config->db_pass);
+	require_once(dirname(__FILE__).'/dibi/dibi.php');
+	dibi::connect(array(
+		'driver' => 'mysql',
+		'host' => $config->db_host,
+		'user' => $config->db_user,
+		'password' => $config->db_pass,
+		'database' => $config->db_db,
+	));
 
 	try {
 		$enc = mysql_query("SET CHARACTER SET 'utf-8'");
 		$enc = mysql_query("SET NAMES 'utf8'");
 	} catch (Exception $e) { }
 	
-	$resource	= mysql_select_db($config->db_db);
 } catch (Exception $e) {
 	trigger_error(mysql_error());
 }
@@ -126,7 +132,7 @@ class dynamicPage extends Smarty {
 		$this->cache_dir	= SMARTY_DIR."cache/";
 		$this->caching		= false;
 		
-		//for editing templates it´s better "true", but slow down site load
+		//for editing templates itï¿½s better "true", but slow down site load
 		$this->force_compile = false;
 		
 		$this->assign("app_name","dynamicPage");
