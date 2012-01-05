@@ -63,14 +63,16 @@ function getipbyhost($ip_host = "") {
 
 //connect to db
 try {
+	
+	$mysql = mysql_connect($config->db_host,$config->db_user,$config->db_pass);
+	mysql_select_db($config->db_db);
+	
 	require_once(dirname(__FILE__).'/dibi/dibi.php');
 	dibi::connect(array(
+		'resource' => $mysql,
 		'driver' => 'mysql',
-		'host' => $config->db_host,
-		'user' => $config->db_user,
-		'password' => $config->db_pass,
-		'database' => $config->db_db,
 	));
+	
 
 	try {
 		$enc = mysql_query("SET CHARACTER SET 'utf-8'");
