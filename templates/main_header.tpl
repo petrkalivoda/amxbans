@@ -12,9 +12,11 @@
 	<meta http-equiv="pragma" content="no-cache" /> 
 	<meta http-equiv="cache-control" content="no-cache" />
 	<link rel="stylesheet" type="text/css" href="templates/{$design}_css/style.css" />
+	<link rel="stylesheet" type="text/css" href="templates/_css/smoothness/jquery-ui-1.8.16.css" />
 	<title>AMXBans {$version_web} - {$title|lang}{if $title2} - {$title2|lang}{/if}</title>
 	<script type="text/javascript" src="templates/{$design}_js/amxbans.js.php"></script>
 	<script type="text/javascript" src="templates/{$design}_js/jquery.js"></script>
+	<script type="text/javascript" src="templates/{$design}_js/jquery-ui-1.8.16.min.js"></script>
 	<script type="text/javascript" src="templates/{$design}_js/tooltip.js"></script>	
 	<script type="text/javascript" src="include/layer.js"></script>
 </head>
