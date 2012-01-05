@@ -3,3 +3,5 @@
 /.settings
 /include/smarty/templates_c
 !/include/smarty/templates_c/.deleteme
+/include/config.inc.php
+/include/db.config.inc.php
